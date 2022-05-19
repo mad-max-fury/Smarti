@@ -103,16 +103,16 @@ const InputsWrap = styled.div`
   gap: 1rem;
   width: 70%;
   margin: 0 auto;
-  @media (max-width: 851px) and (min-width: 510px) {
+  @media (max-width: 851px) {
     width: 100%;
     display: grid;
     grid-template-columns: repeat(2, auto);
   }
-  @media (max-width: 510px) {
+  /* @media (max-width: 510px) {
     width: 100%;
     display: flex;
     flex-direction: column;
-  }
+  } */
 `;
 const Button = styled.input`
   color: #010a88;

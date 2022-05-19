@@ -31,12 +31,9 @@ const InputWrap = styled.input`
   &::placeholder {
     color: #f5f5f5;
   }
-  @media (max-width: 851px) and (min-width: 510px) {
+  @media (max-width: 851px) {
     grid-column: span 2;
     width: calc(100% - 15px);
     margin: 0 auto;
-  }
-  @media (max-width: 510px) {
-    width: 90%;
   }
 `;
