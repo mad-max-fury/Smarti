@@ -35,16 +35,18 @@ function App() {
           <Logo>
             <img src={logo} alt="logo" />
           </Logo>
-          <Dropdown
-            options={[
-              "-- select engine",
-              "text-davinci-002",
-              "text-curie-001",
-              "text-babbage-001",
-              "text-ada-001",
-            ]}
-            func={setEngine}
-          />
+          <Wrap>
+            <Dropdown
+              options={[
+                "-- select engine",
+                "text-davinci-002",
+                "text-curie-001",
+                "text-babbage-001",
+                "text-ada-001",
+              ]}
+              func={setEngine}
+            />
+          </Wrap>
         </Nav>
         <Form engine={engine} userData={userData} setUserData={setUserData} />
       </Header>
@@ -116,6 +118,9 @@ const Wrap = styled.div`
   width: fit-content;
   height: fit-content;
   border-radius: 15px;
+  @media (max-width: 500px) {
+    width: 150px;
+  }
 `;
 const Wrapabtn = styled.button`
   padding: 16px 30px;

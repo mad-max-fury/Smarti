@@ -99,6 +99,7 @@ const FormWrapper = styled.form`
 const InputsWrap = styled.div`
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 1rem;
   width: 70%;
   margin: 0 auto;
@@ -118,14 +119,15 @@ const Button = styled.input`
   padding: 18px 30px;
   border-radius: 10px;
   font-weight: 500;
-  margin: 0 2rem;
+
   border: none;
   transition: all 0.3s ease-in-out;
   &:hover {
     transition: all 0.3s ease-in-out;
-
+    cursor: pointer;
     border: 2px solid #fff;
     background-color: transparent;
     color: #fff;
+    padding: 16px 30px;
   }
 `;
