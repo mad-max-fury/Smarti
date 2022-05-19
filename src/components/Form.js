@@ -6,6 +6,7 @@ import axios from "axios";
 const Form = ({ engine, userData, setUserData }) => {
   const [prompt, setPrompt] = useState("");
   const [preset, setPreset] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -17,6 +18,7 @@ const Form = ({ engine, userData, setUserData }) => {
       frequency_penalty: 0.0,
       presence_penalty: 0.0,
     };
+    setLoading(true);
 
     try {
       const response = await axios.post(
@@ -53,8 +55,10 @@ const Form = ({ engine, userData, setUserData }) => {
           ])
         )
       );
+      setLoading(false);
     } catch (error) {
       console.log(error);
+      setLoading(false);
     }
   };
 
@@ -72,7 +76,12 @@ const Form = ({ engine, userData, setUserData }) => {
           ]}
           func={setPreset}
         />
-        <Button type="submit" value={"Search now"}></Button>
+        <Button
+          type="submit"
+          disabled={prompt === "" || loading === true ? true : false}
+          value={loading ? "Loading..." : "Search now"}
+          style={{ cursor: loading ? "not-allowed" : "pointer" }}
+        ></Button>
       </InputsWrap>
     </FormWrapper>
   );
